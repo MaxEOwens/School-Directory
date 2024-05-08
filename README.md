@@ -1,1 +1,1 @@
-Starter# School-Directory
+# School-Directory
