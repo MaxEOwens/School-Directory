@@ -9,6 +9,7 @@
 class Staff : public Person {
 public:
   // Constructor
+  Staff();
   Staff(const std::string& name, const std::string& email, 
     const std::string& address, const std::string& phone, int age, 
     int id, const std::string position); 
@@ -24,8 +25,8 @@ public:
 
 
   // Not sure how these should be implemented
-  void addCurrentCourse(const std::string& course);
-  void removeCurrentCourse(const std::string& course);
+  void addCurrentCourse(const Course course);
+  void removeCurrentCourse(const Course course);
   std::vector<Course> getCurrentCourses() const;
 
   void printInfo() const;

@@ -6,6 +6,7 @@
 #include "Person.h"
 #include "Student.h"
 #include "Course.h"
+#include "Staff.h"
 
 
 using namespace std;
@@ -35,6 +36,25 @@ void testProgram() {
 
 
     testStudent.printInfo();
+    Staff testStaff;
+      testStaff.setName("Jane Doe");
+    testStaff.setEmail("test@gmail.com");
+    testStaff.setAddress("1234 Elm St");
+    testStaff.setPhone("123-456-7890");
+    testStaff.setAge(45);
+    testStaff.setId(123456);
+    testStaff.setPosition("Teacher");
+
+
+    Course testCourseS("Math", "Spring 24", "Who", "1111");
+    Course testCourse1S("English", "Spring 24", "What", "2222");
+    Course testCourse2S("Bio", "Spring 24", "Where", "3333");
+    Course testCourse3S("CSC 340", "Spring 24", "When", "4444");
+
+    testStaff.addCurrentCourse(testCourseS);
+    testStaff.addCurrentCourse(testCourse1S);
+    testStaff.addCurrentCourse(testCourse2S);
+    testStaff.addCurrentCourse(testCourse3S);
 
 }
 
