@@ -1,0 +1,26 @@
+TODO:
+    LinkedList Format
+
+    LinkedList Functions
+        -generate objects form file
+            -save to file
+            -delete from file
+            *could have file be deleted upon starting program 
+            and resaved when program ends 
+            -deside on file formatting
+
+    Main Functions
+        -print to console
+
+    User Interface
+        - directions for users
+
+    People
+
+    //
+    -
+    -
+    clas#1 $$ class#2
+
+     
+    
