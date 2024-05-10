@@ -2,6 +2,9 @@
 #include "Student.h"
 #include "Course.h"
 #include <iostream>
+#include <string>
+
+  Student::Student(){}
 
   Student::Student(const std::string& name, const std::string& email, 
                   const std::string& address, const std::string& phone, int age, 
@@ -39,34 +42,30 @@
 
 
 
-  void Student::addCurrentCourse(const std::string& course){ //this needs work
-    //currentCourses.push_back(course); ??
-    
-    //need to string to course conversion in course.h
-    //maybe there is a better way to do this
-
+  void Student::addCurrentCourse(const Course newCourse){ //this needs work
+    currentCourses.push_back(newCourse);
   }
 
-  void Student::removeCurrentCourse(const std::string& course){
-
+  void Student::removeCurrentCourse(const Course course){
+    //do later
   }
 
   std::vector<Course> Student::getCurrentCourses() const{
-    return currentCourses;//this needs work
+    return currentCourses;
   }
 
 
 
-  void Student::addCompletedCourse(const std::string& course){
-
+  void Student::addCompletedCourse(const Course newCourse){
+    completedCourses.push_back(newCourse);
   }
 
-  void Student::removeCompletedCourse(const std::string& course){
-
+  void Student::removeCompletedCourse(const Course course){
+    //do later
   }
   
   std::vector<Course> Student::getCompletedCourses() const{
-    return completedCourses;//this needs work
+    return completedCourses;
   }
 
 
@@ -77,4 +76,16 @@
     std::cout << "Student ID: " << getId() << std::endl;
     std::cout << "Student Parent Phone: " << getParentPhone() << std::endl;
     std::cout << "Student Graduation Year: " << getGraduationYear() << std::endl;
+    
+    std::cout << "Current courses: " << std::endl;
+    for (int i = 0; i < currentCourses.size(); i++)
+    {
+      currentCourses.at(i).printInfo();
+    }
+    
+    std::cout << "Past courses: " << std::endl;
+    for (int i = 0; i < completedCourses.size(); i++)
+    {
+      completedCourses.at(i).printInfo();
+    }
   }

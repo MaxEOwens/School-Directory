@@ -9,6 +9,8 @@
 class Student : public Person {
 public:
   // Constructor
+  Student();
+
   Student(const std::string& name, const std::string& email, 
     const std::string& address, const std::string& phone, int age, 
     int id, const std::string& parentPhone, const std::string& graduationYear );
@@ -28,12 +30,12 @@ public:
 
 
   // Not sure how these should be implemented
-  void addCurrentCourse(const std::string& course);
-  void removeCurrentCourse(const std::string& course);
+  void addCurrentCourse(const Course newCourse);
+  void removeCurrentCourse(const Course course);
   std::vector<Course> getCurrentCourses() const;
 
-  void addCompletedCourse(const std::string& course);
-  void removeCompletedCourse(const std::string& course);
+  void addCompletedCourse(const Course newCourse);
+  void removeCompletedCourse(const Course course);
   std::vector<Course> getCompletedCourses() const;
 
   void printInfo() const;

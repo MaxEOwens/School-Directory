@@ -12,24 +12,34 @@ using namespace std;
 
 
 void testProgram() {
-    // Create a Person object
-    Person person;
+    Student testStudent;
 
-    // Set the Person object's name
-    person.setName("John Doe");
+    testStudent.setName("John Doe");
+    testStudent.setEmail("test@gmail.com");
+    testStudent.setAddress("1234 Elm St");
+    testStudent.setPhone("123-456-7890");
+    testStudent.setAge(20);
+    testStudent.setId(12345);
+    testStudent.setParentPhone("098-765-4321");
+    testStudent.setGraduationYear("2023");
 
-    // Set the Person object's email
-    person.setEmail("       ");
+    Course testCourse("Math", "Spring 24", "Who", "1111");
+    Course testCourse1("English", "Spring 24", "What", "2222");
+    Course testCourse2("Bio", "Spring 24", "Where", "3333");
+    Course testCourse3("CSC 340", "Spring 24", "When", "4444");
 
-    // Set the Person object's address
-    person.setAddress("123 Main St.");
+    testStudent.addCurrentCourse(testCourse);
+    testStudent.addCurrentCourse(testCourse1);
+    testStudent.addCurrentCourse(testCourse2);
+    testStudent.addCurrentCourse(testCourse3);
+
+
+    testStudent.printInfo();
+
 }
 
 
 int main() {
-
-
-
-    cout << "Hello World!";
+    testProgram();
     return 0;
 }

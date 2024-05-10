@@ -3,7 +3,7 @@
 #include "Course.h"
 
   // Constructor
-  Course::Course(const std::string name, const std::string term, const std::string instructor, int section){
+  Course::Course(const std::string name, const std::string term, const std::string instructor, std::string section){
     setName(name);
     setTerm(term);
     setInstructor(instructor);
@@ -35,19 +35,22 @@
     return courseInstructor;
   }
 
-  void Course::setSection(int courseSection){
-    courseSection = courseSection;
+  void Course::setSection(std::string courseSect){
+    courseSection = courseSect;
   }
 
-  int Course::getSection() const{
+  std::string Course::getSection() const{
     return courseSection;
   }
 
   void Course::printInfo() const{
-    std::cout << "Course Name: " << getName() << std::endl;
-    std::cout << "Course Term: " << getTerm() << std::endl;
-    std::cout << "Course Instructor: " << getInstructor() << std::endl;
-    std::cout << "Course Section: " << getSection() << std::endl;
+    std::cout << "    Course Name: " << getName() << std::endl;
+    std::cout << "    Course Term: " << getTerm() << std::endl;
+    std::cout << "    Course Instructor: " << getInstructor() << std::endl;
+    std::cout << "    Course Section: " << getSection() << std::endl;
+    std::cout << std::endl;
   }
+
+
 
   // ostream operator overload?

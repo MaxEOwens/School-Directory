@@ -9,7 +9,7 @@
 class Course {
 public:
   // Constructor
-  Course(const std::string courseName, const std::string term, const std::string instructor, int section);
+  Course(const std::string courseName, const std::string term, const std::string instructor, std::string section);
 
 
   // Getters and Setters
@@ -22,8 +22,8 @@ public:
   void setInstructor(const std::string& instructor);
   std::string getInstructor() const;
 
-  void setSection(int section);
-  int getSection() const;
+  void setSection(std::string section);
+  std::string getSection() const;
 
   void printInfo() const;
 
@@ -32,7 +32,7 @@ public:
   std::string courseName;
   std::string courseTerm;
   std::string courseInstructor;
-  int courseSection;
+  std::string courseSection;
 
 };
 
