@@ -8,6 +8,7 @@ School Directory App:
 
 
   Features:
+  
     1. Student profiles: Provide a platform to store and display information about students, such as their names, ID numbers, classes, and graduation date, and contact details.
 
     2. Teacher profiles: Similar to student profiles, but for teachers, including their names, subjects they teach, contact information, and position.
