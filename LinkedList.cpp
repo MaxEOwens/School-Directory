@@ -4,13 +4,13 @@
   // Constructor
   template <typename T>
   LinkedList<T>::LinkedList() {
-    // Initialize your linked list here
+    // Initialize linked list here
   }
 
   // Destructor
   template <typename T>
   LinkedList<T>::~LinkedList() {
-    // Clean up your linked list here
+    // Clean up linked list here
   }
 
   // Add a new element to the linked list
@@ -28,8 +28,8 @@
   // Get the size of the linked list
   template <typename T>
   int LinkedList<T>::size() const {
-    // Implement the size function here
-    return 0; // Placeholder, replace with actual implementation
+    return numElements; 
   }
 
-  // Other member functions and data members can be added here
+
+  // Other member functions and data members

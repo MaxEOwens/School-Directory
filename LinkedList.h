@@ -1,5 +1,6 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
+#include "Node.h"
 
 template <typename T>
 class LinkedList {
@@ -20,16 +21,14 @@ public:
   int size() const; 
 
 
-  // Other member functions and data members can be added here
+  // Other member functions and data members
 
 
 private:
-  // Private data members can be added here
+  Node<T>* head;
+  Node<T>* tail;
+  int numElements;
+
 };
-
-
-
-
-
 
 #endif // LINKEDLIST_H
