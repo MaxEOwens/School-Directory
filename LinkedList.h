@@ -1,35 +1,46 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-template <typename T>
-class LinkedList {
+#include <iostream>
+#include <string>
+#include <vector>
+class Student;
+class Teacher;
+class Person
+{
 public:
-  // Constructor
-  LinkedList();
+  std::string name;
+  std::string email;
+};
 
-  // Destructor
-  ~LinkedList();
+class Student : public Person {
+    std::vector<std::string> classes;
+    void printInfo() const;
 
-  // Add a new element to the linked list
-  void add(const T& element);
-
-  // Remove an element from the linked list
-  void remove(const T& element);
-
-  // Get the size of the linked list
-  int size() const; 
-
-
-  // Other member functions and data members can be added here
-
-
-private:
-  // Private data members can be added here
+};
+class Teacher : public Person {
+public:
+    std::string department;
+    void printInfo() const;
 };
 
 
+class Node {
+public:
+    Person data;
+    Person* pointer;
+    Node* next;
+    Node(Person person) : data(person), next(nullptr) {}
+};
 
-
-
+class LinkedList {
+private:
+    Node* head;
+public:
+    LinkedList();
+    ~LinkedList();
+    void insert(Person person);
+    void display() const;
+};
 
 #endif // LINKEDLIST_H

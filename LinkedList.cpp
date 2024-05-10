@@ -1,35 +1,43 @@
 #include "LinkedList.h"
+using namespace std;
+//constructor
+LinkedList::LinkedList() : head(nullptr) {}
 
+//deconstructor
+LinkedList::~LinkedList() {
+    while (head != nullptr) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
+}
 
-  // Constructor
-  template <typename T>
-  LinkedList<T>::LinkedList() {
-    // Initialize your linked list here
-  }
+//newPerson
+void LinkedList::insert(Person person) {
+    Node* newNode = new Node(person);
+    if (head == nullptr) {
+        head = newNode;
+    } else {
+        Node* temp = head;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+}
 
-  // Destructor
-  template <typename T>
-  LinkedList<T>::~LinkedList() {
-    // Clean up your linked list here
-  }
-
-  // Add a new element to the linked list
-  template <typename T>
-  void LinkedList<T>::add(const T& element) {
-    // Implement the add function here
-  }
-
-  // Remove an element from the linked list
-  template <typename T>
-  void LinkedList<T>::remove(const T& element) {
-    // Implement the remove function here
-  }
-
-  // Get the size of the linked list
-  template <typename T>
-  int LinkedList<T>::size() const {
-    // Implement the size function here
-    return 0; // Placeholder, replace with actual implementation
-  }
-
-  // Other member functions and data members can be added here
+//default display
+void LinkedList::display() {
+    Node* temp = head;
+    while (temp != nullptr) {
+        cout << "Name: " << temp->data.name <<endl;
+        cout << "Email: " << temp->data.email << endl;
+        if (dynamic_cast<Student*>(&temp->data)) {
+            std::cout << "Classes: ";
+            for (const auto& className : temp->data.classes) {
+                std::cout << className << ", ";
+            }
+        cout << endl;
+        temp = temp->next;
+    }
+}
