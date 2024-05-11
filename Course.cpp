@@ -52,5 +52,14 @@
   }
 
 
+  //overload the << operator
+  std::ostream& operator<<(std::ostream& os, const Course& course){
+    os << "    Course Name: " << course.getName() << std::endl;
+    os << "    Course Term: " << course.getTerm() << std::endl;
+    os << "    Course Instructor: " << course.getInstructor() << std::endl;
+    os << "    Course Section: " << course.getSection() << std::endl;
+    os << std::endl;
+    return os;
+  }
 
   // ostream operator overload?

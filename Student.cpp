@@ -2,6 +2,8 @@
 #include "Student.h"
 #include "Course.h"
 #include <iostream>
+#include <sstream>
+#include <vector>
 #include <string>
 
   Student::Student(){}
@@ -88,4 +90,29 @@
     {
       completedCourses.at(i).printInfo();
     }
+  }
+
+
+
+  std::string Student::fileOut() const{
+    std::ostringstream os;
+
+    os << "Student Name: " << getName() << std::endl;
+    os << "Student Age: " << getAge() << std::endl;
+    os << "Student ID: " << getId() << std::endl;
+    os << "Student Parent Phone: " << getParentPhone() << std::endl;
+    os << "Student Graduation Year: " << getGraduationYear() << std::endl;
+    
+    os << "Current courses: " << std::endl;
+    for (int i = 0; i < getCurrentCourses().size(); i++)
+    {
+      os << getCurrentCourses().at(i) << std::endl;
+    }
+    
+    os << "Past courses: " << std::endl;
+    for (int i = 0; i < getCompletedCourses().size(); i++)
+    {
+      os << getCompletedCourses().at(i) << std::endl;
+    }
+    return os.str();
   }

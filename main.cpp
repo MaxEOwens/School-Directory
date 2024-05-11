@@ -2,18 +2,19 @@
 #include <string>
 #include <vector>
 
+//testing these
+#include <sstream>
+#include <fstream>
+
 #include "LinkedList.h"
 #include "Person.h"
 #include "Student.h"
+#include "Staff.h"
 #include "Course.h"
-
 
 using namespace std;
 
-
-void testProgram() {
-    Student testStudent;
-
+void setStudentInfo(Student& testStudent){
     testStudent.setName("John Doe");
     testStudent.setEmail("test@gmail.com");
     testStudent.setAddress("1234 Elm St");
@@ -32,14 +33,49 @@ void testProgram() {
     testStudent.addCurrentCourse(testCourse1);
     testStudent.addCurrentCourse(testCourse2);
     testStudent.addCurrentCourse(testCourse3);
+}
 
 
+
+void testProgram() {
+    Student testStudent;
+    setStudentInfo(testStudent);
     testStudent.printInfo();
+}
+
+
+
+void testRead(){
+    ifstream file("testWrite.txt");
+    string line;
+    while(getline(file, line)){
+        cout << line << endl;
+    }
+    file.close();
+    cout << "File read" << endl;
+}
+
+
+
+void tetsWrite(Student testStudent){
+    //open file testWrite.txt
+    std::string outFile = testStudent.fileOut();
+
+    ofstream file("testWrite.txt");
+    file << outFile;
+    file.close();
+
+    cout << "File written" << endl;
 
 }
 
 
+
 int main() {
-    testProgram();
+    Student testStudent;
+    setStudentInfo(testStudent);
+    tetsWrite(testStudent);
+
+    //testProgram();
     return 0;
 }

@@ -15,11 +15,8 @@ public:
     const std::string& address, const std::string& phone, int age, 
     int id, const std::string& parentPhone, const std::string& graduationYear );
   
-
-
   // Destructor?
   //~Student();
-
 
   // Setters and getters for the Student class
   void setParentPhone(const std::string& parentPhone);
@@ -39,6 +36,8 @@ public:
   std::vector<Course> getCompletedCourses() const;
 
   void printInfo() const;
+
+  std::string fileOut() const;
 
 private:
   std::string parentPhone;
