@@ -1,0 +1,31 @@
+Student Name: John Doe
+Student Age: 20
+Student ID: 12345
+Student Parent Phone: 098-765-4321
+Student Graduation Year: 2023
+Current courses: 
+    Course Name: Math
+    Course Term: Spring 24
+    Course Instructor: Who
+    Course Section: 1111
+
+
+    Course Name: English
+    Course Term: Spring 24
+    Course Instructor: What
+    Course Section: 2222
+
+
+    Course Name: Bio
+    Course Term: Spring 24
+    Course Instructor: Where
+    Course Section: 3333
+
+
+    Course Name: CSC 340
+    Course Term: Spring 24
+    Course Instructor: When
+    Course Section: 4444
+
+
+Past courses: 

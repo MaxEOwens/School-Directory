@@ -22,8 +22,6 @@ public:
 
 
   // Other member functions and data members
-
-
 private:
   Node<T>* head;
   Node<T>* tail;

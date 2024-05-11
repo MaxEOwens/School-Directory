@@ -2,9 +2,11 @@
 #include "Student.h"
 #include "Course.h"
 #include <iostream>
+#include <sstream>
+#include <vector>
 #include <string>
 #include <fstream>
-#include "people.txt"
+
 
 
   Student::Student(){}
@@ -71,27 +73,7 @@
     return completedCourses;
   }
 
-  void Student::writeToFile() const{
-    std::ofstream outFile("people.txt");
-    if (!outFile.is_open()) {
-        std::cerr << "Error: Unable to open file: " << "people.txt" << std::endl;
-        return;
-    }
-    Node* temp = head;
-    while (temp != nullptr) {
-        outFile << "Name: " << temp->data->name << std::endl;
-        outFile << "Email: " << temp->data->email << std::endl;
-        if (Student* student = dynamic_cast<Student*>(temp->data)) {
-            outFile << "Classes: ";
-            for (const auto& className : student->classes) {
-                outFile << className << ", ";
-            }
-            outFile << std::endl;
-        }
-        temp = temp->next;
-    }
-    outFile.close();
-}
+  
 
 
   void Student::printInfo() const{
@@ -112,4 +94,29 @@
     {
       completedCourses.at(i).printInfo();
     }
+  }
+
+
+
+  std::string Student::fileOut() const{
+    std::ostringstream os;
+
+    os << "Student Name: " << getName() << std::endl;
+    os << "Student Age: " << getAge() << std::endl;
+    os << "Student ID: " << getId() << std::endl;
+    os << "Student Parent Phone: " << getParentPhone() << std::endl;
+    os << "Student Graduation Year: " << getGraduationYear() << std::endl;
+    
+    os << "Current courses: " << std::endl;
+    for (int i = 0; i < getCurrentCourses().size(); i++)
+    {
+      os << getCurrentCourses().at(i) << std::endl;
+    }
+    
+    os << "Past courses: " << std::endl;
+    for (int i = 0; i < getCompletedCourses().size(); i++)
+    {
+      os << getCompletedCourses().at(i) << std::endl;
+    }
+    return os.str();
   }

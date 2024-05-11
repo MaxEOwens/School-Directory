@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 class Course {
 public:
@@ -22,7 +23,7 @@ public:
   void setInstructor(const std::string& instructor);
   std::string getInstructor() const;
 
-  void setSection(std::string section);
+  void setSection(std::string section);// fix this 
   std::string getSection() const;
 
   void printInfo() const;
@@ -35,5 +36,7 @@ public:
   std::string courseSection;
 
 };
+
+std::ostream& operator<<(std::ostream& os, const Course& course); //this is ugly
 
 #endif // COURSE_H
