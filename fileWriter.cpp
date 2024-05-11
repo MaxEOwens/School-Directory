@@ -1,27 +1,7 @@
-#include LinkedList.cpp
+#include LinkedList.h
 #include <fstream>
 
-void LinkedList::writeToFile() const{
-    std::ofstream outFile(people.txt);
-    if (!outFile.is_open()) {
-        std::cerr << "Error: Unable to open file: " << filename << std::endl;
-        return;
-    }
-    Node* temp = head;
-    while (temp != nullptr) {
-        outFile << "Name: " << temp->data->name << std::endl;
-        outFile << "Email: " << temp->data->email << std::endl;
-        if (Student* student = dynamic_cast<Student*>(temp->data)) {
-            outFile << "Classes: ";
-            for (const auto& className : student->classes) {
-                outFile << className << ", ";
-            }
-            outFile << std::endl;
-        }
-        temp = temp->next;
-    }
-    outFile.close();
-}
+
 
 void LinkedList::readFromFile(){
     std::ifstream inFile(people.txt);
