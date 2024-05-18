@@ -28,16 +28,29 @@ public:
 
   // Not sure how these should be implemented
   void addCurrentCourse(const Course newCourse);
-  void removeCurrentCourse(const Course course);
+  void removeCurrentCourse(const std::string courseSection);
+  void moveCurToCom();
+
   std::vector<Course> getCurrentCourses() const;
 
   void addCompletedCourse(const Course newCourse);
-  void removeCompletedCourse(const Course course);
+  void removeCompletedCourse(const std::string courseSection);
   std::vector<Course> getCompletedCourses() const;
 
   void printInfo() const;
 
   std::string fileOut() const;
+
+
+  bool lestThan(const Student& other, const std::string field) const;
+  bool greaterThan(const Student& other, const std::string field) const;
+
+
+  bool operator==(const Student& other) const;
+  bool operator!=(const Student& other) const;
+
+
+
 
 private:
   std::string parentPhone;

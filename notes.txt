@@ -23,4 +23,26 @@ TODO:
     clas#1 $$ class#2
 
      
-    
+
+Staff:    
+    name
+    email
+    address
+    phone
+    age
+    id
+    position
+    currentCourses
+
+
+Student:
+    name
+    email
+    address
+    phone
+    age
+    id
+    parentPhone
+    graduationYear
+    currentCourses
+    completedCourses

@@ -51,9 +51,16 @@
     currentCourses.push_back(newCourse);
   }
 
-  void Student::removeCurrentCourse(const Course course){
+  void Student::removeCurrentCourse(const std::string courseSection){
     //do later
   }
+
+  void Student::moveCurToCom(){
+    for(int i = 0; i < currentCourses.size(); i++){
+      completedCourses.push_back(currentCourses.at(i));
+    }
+  }
+
 
   std::vector<Course> Student::getCurrentCourses() const{
     return currentCourses;
@@ -65,7 +72,7 @@
     completedCourses.push_back(newCourse);
   }
 
-  void Student::removeCompletedCourse(const Course course){
+  void Student::removeCompletedCourse(const std::string courseSection){
     //do later
   }
   
@@ -78,6 +85,9 @@
 
   void Student::printInfo() const{
     std::cout << "Student Name: " << getName() << std::endl;
+    std::cout << "Student Email: " << getEmail() << std::endl;
+    std::cout << "Student Address: " << getAddress() << std::endl;
+    std::cout << "Student Phone: " << getPhone() << std::endl;
     std::cout << "Student Age: " << getAge() << std::endl;
     std::cout << "Student ID: " << getId() << std::endl;
     std::cout << "Student Parent Phone: " << getParentPhone() << std::endl;
@@ -120,3 +130,66 @@
     }
     return os.str();
   }
+
+
+  bool Student::lestThan(const Student& other, const std::string field) const{
+      if(field == "name"){
+        return getName() < other.getName();
+      } else if(field == "email"){
+        return getEmail() < other.getEmail();
+      } else if(field == "address"){
+        return getAddress() < other.getAddress();
+      } else if(field == "phone"){
+        return getPhone() < other.getPhone();
+      } else if(field == "age"){
+        return getAge() < other.getAge();
+      } else if(field == "id"){
+        return getId() < other.getId();
+      } else if(field == "parentPhone"){
+        return getParentPhone() < other.getParentPhone();
+      } else if(field == "graduationYear"){
+        return getGraduationYear() < other.getGraduationYear();
+      } else if(field == "currentCourses"){
+        //do later
+      } else if(field == "completedCourses"){
+        //do later
+      } 
+      return false;
+  }
+
+  bool Student::greaterThan(const Student& other, const std::string field) const{
+    if(field == "name"){
+      return getName() > other.getName();
+    } else if(field == "email"){
+      return getEmail() > other.getEmail();
+    } else if(field == "address"){
+      return getAddress() > other.getAddress();
+    } else if(field == "phone"){
+      return getPhone() > other.getPhone();
+    } else if(field == "age"){
+      return getAge() > other.getAge();
+    } else if(field == "id"){
+      return getId() > other.getId();
+    } else if(field == "parentPhone"){
+      return getParentPhone() > other.getParentPhone();
+    } else if(field == "graduationYear"){
+      return getGraduationYear() > other.getGraduationYear();
+    } else if(field == "currentCourses"){
+      //do later
+    } else if(field == "completedCourses"){
+      //do later
+    }
+    return false;
+  }
+
+
+
+
+  bool Student::operator==(const Student& other) const{
+    return false; //do later
+  }
+
+  bool Student::operator!=(const Student& other) const{
+    return false; //do later
+  }
+

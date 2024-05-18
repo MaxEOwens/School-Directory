@@ -1,29 +1,48 @@
 #ifndef NODE_H
 #define NODE_H
 
-template <typename T>
+
 class Node {
 
 public:
   // Constructors
-  Node();
-
-  Node(const T& data);
+  Node(){
+    next = nullptr;
+    prev = nullptr;
+  }
   
   // Getters and Setters
-  Node<T> *getPrev() const;
+  Node *getPrev() {
+    return prev;
+  }
 
-  void setPrev(Node<T> *newPrev);
+  void setPrev(Node *newPrev) {
+    prev = newPrev;
+  }
 
-  Node<T>* getNext() const;
+  Node* getNext() {
+    return next;
+  }
 
-  void setNext(Node<T>* newNext);
+  void setNext(Node* newNext){  
+    next = newNext;
+  }
+
+  int getData() {
+    return data;
+  }
+
+  void setData(const int& newData){
+    data = newData;
+  }
+
 
 private:
-  T data;
-  Node<T>* next;
-  Node<T>* prev;
+  int data;
+  Node* next;
+  Node* prev;
 
 };
+
 
 #endif // NODE_H
